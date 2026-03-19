@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ingeniería del Software — Ensayo</title>
+<title>Ingeniería del Software — Ensayo Académico | Los Telaraños</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -81,26 +81,41 @@
     max-width: 680px;
   }
   .hero-sub {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--ink-muted);
-    max-width: 560px;
+    max-width: 580px;
     line-height: 1.7;
+    margin-bottom: 0.6rem;
+  }
+  .hero-question {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--accent-mid);
+    max-width: 580px;
     margin-bottom: 2rem;
+    padding-left: 0.8rem;
+    border-left: 2px solid var(--accent-mid);
   }
   .hero-meta {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
     font-size: 0.82rem;
     color: var(--ink-subtle);
   }
-  .hero-meta span { display: flex; align-items: center; gap: 6px; }
-
-  /* --- DROPDOWN BOTÓN Y MENÚ --- */
-  .dropdown {
-    position: relative;
-    display: inline-block;
+  .hero-meta .badge {
+    background: var(--surface-alt);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
   }
+  .hero-meta .badge b { color: var(--accent-mid); font-weight: 500; }
+
+  /* --- DROPDOWN --- */
+  .dropdown { position: relative; display: inline-block; }
   .dropdown-btn {
     background: transparent;
     color: var(--ink-subtle);
@@ -115,10 +130,7 @@
     gap: 6px;
     transition: all 0.2s ease;
   }
-  .dropdown-btn:hover {
-    background: var(--surface-alt);
-    color: var(--ink);
-  }
+  .dropdown-btn:hover { background: var(--surface-alt); color: var(--ink); }
   .dropdown-content {
     display: none;
     position: absolute;
@@ -134,9 +146,7 @@
     padding: 8px 0;
     flex-direction: column;
   }
-  .dropdown:hover .dropdown-content {
-    display: flex;
-  }
+  .dropdown:hover .dropdown-content { display: flex; }
   .dropdown-item {
     color: var(--ink-muted);
     padding: 6px 16px;
@@ -145,10 +155,7 @@
     cursor: default;
     transition: background 0.1s;
   }
-  .dropdown-item:hover {
-    background-color: var(--surface-alt);
-    color: var(--ink);
-  }
+  .dropdown-item:hover { background-color: var(--surface-alt); color: var(--ink); }
 
   /* --- LAYOUT --- */
   .content-wrap {
@@ -162,8 +169,6 @@
   }
 
   /* --- ARTICLE --- */
-  article {}
-
   .section-label {
     display: inline-flex;
     align-items: center;
@@ -190,18 +195,50 @@
     color: var(--ink);
     margin-bottom: 1.25rem;
   }
-
+  article h3 {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--ink-muted);
+    margin: 2.2rem 0 0.8rem;
+  }
   article p {
     font-size: 1rem;
     color: #2e2e2e;
     line-height: 1.85;
     margin-bottom: 1.2rem;
   }
-
   .section-divider {
     border: none;
     border-top: 1px solid var(--rule);
     margin: 3rem 0;
+  }
+
+  /* --- TESIS BOX --- */
+  .thesis-box {
+    background: var(--accent-light);
+    border: 1px solid #a8dbc9;
+    border-left: 4px solid var(--accent-mid);
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.5rem;
+    margin: 1.8rem 0;
+  }
+  .thesis-box .thesis-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .thesis-box p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--accent);
+    line-height: 1.7;
+    margin: 0;
   }
 
   /* --- PULL QUOTE --- */
@@ -214,174 +251,64 @@
   }
   .pull-quote p {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--accent);
     margin: 0;
     line-height: 1.6;
   }
-
-  /* --- TYPE CARDS --- */
-  .type-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 1.8rem 0 2rem;
-  }
-  .type-card {
-    background: #fff;
-    border: 1px solid var(--rule);
-    border-radius: 10px;
-    padding: 1rem 1.1rem;
-  }
-  .type-card .tc-icon {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+  .pull-quote cite {
     display: block;
-  }
-  .type-card .tc-title {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin-bottom: 0.35rem;
-  }
-  .type-card .tc-desc {
-    font-size: 0.83rem;
-    color: var(--ink-muted);
-    line-height: 1.55;
-    margin: 0;
+    margin-top: 0.6rem;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.75rem;
+    color: var(--ink-subtle);
   }
 
-  /* --- PROCESS STEPS --- */
-  .process-steps {
-    margin: 1.8rem 0;
-    position: relative;
+  /* --- INLINE CITATION --- */
+  .cita {
+    font-size: 0.85rem;
+    color: var(--accent-mid);
+    font-weight: 500;
   }
-  .process-steps::before {
+
+  /* --- TIMELINE --- */
+  .timeline {
+    margin: 2rem 0;
+    border-left: 2px solid var(--rule);
+    padding-left: 1.5rem;
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 1.1rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .tl-last { border-bottom: none; margin-bottom: 0; }
+  .tl-item::before {
     content: '';
     position: absolute;
-    left: 19px;
-    top: 28px;
-    bottom: 28px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent-mid), var(--rule));
-  }
-  .step {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    margin-bottom: 1.4rem;
-  }
-  .step-num {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    left: -1.87rem;
+    top: 6px;
+    width: 10px; height: 10px;
     border-radius: 50%;
     background: var(--accent-mid);
-    color: #fff;
-    font-size: 0.82rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
+    border: 2px solid var(--surface);
+    outline: 1.5px solid var(--accent-mid);
   }
-  .step-content {}
-  .step-content strong {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 2px;
-  }
-  .step-content span {
-    font-size: 0.84rem;
-    color: var(--ink-muted);
-    line-height: 1.55;
-  }
-
-  /* --- SIDEBAR --- */
-  .sidebar {
-    position: sticky;
-    top: 2rem;
-  }
-  .toc-box {
-    background: #fff;
-    border: 1px solid var(--rule);
-    border-radius: 12px;
-    padding: 1.4rem;
-    margin-bottom: 1.5rem;
-  }
-  .toc-box h3 {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--ink-subtle);
-    margin-bottom: 1rem;
-  }
-  .toc-box ol {
-    list-style: none;
-    counter-reset: toc;
-  }
-  .toc-box ol li {
-    counter-increment: toc;
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-    padding: 5px 0;
-    border-bottom: 1px solid var(--surface-alt);
-    font-size: 0.8rem;
-    color: var(--ink-muted);
-    line-height: 1.4;
-  }
-  .toc-box ol li::before {
-    content: counter(toc, decimal-leading-zero);
-    font-size: 0.65rem;
-    font-weight: 500;
-    color: var(--accent-mid);
-    flex-shrink: 0;
-    padding-top: 1px;
-  }
-  .toc-box ol li:last-child { border-bottom: none; }
-
-  .tag-box {
-    background: var(--accent-light);
-    border-radius: 12px;
-    padding: 1.2rem;
-  }
-  .tag-box h3 {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--accent-mid);
-    margin-bottom: 0.8rem;
-  }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag {
+  .tl-last::before { background: var(--accent); outline-color: var(--accent); }
+  .tl-year {
     font-size: 0.72rem;
     font-weight: 500;
-    background: #fff;
-    border: 1px solid var(--rule);
-    color: var(--ink-muted);
-    padding: 3px 10px;
-    border-radius: 99px;
+    letter-spacing: 0.1em;
+    color: var(--accent-mid);
+    text-transform: uppercase;
+    margin-bottom: 2px;
   }
+  .tl-text { font-size: 0.86rem; color: var(--ink-muted); line-height: 1.55; }
 
-  /* --- FOOTER --- */
-  footer {
-    border-top: 1px solid var(--rule);
-    text-align: center;
-    padding: 2rem;
-    font-size: 0.78rem;
-    color: var(--ink-subtle);
-  }
-
-  /* --- METHODOLOGY CARDS --- */
+  /* --- METHOD CARDS --- */
   .method-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -410,67 +337,132 @@
     text-transform: uppercase;
     color: var(--ink-subtle);
   }
-  .method-name {
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--ink);
-  }
+  .method-name { font-size: 0.88rem; font-weight: 500; color: var(--ink); }
   .method-body { padding: 0.85rem 1rem; }
-  .method-body p {
-    font-size: 0.83rem;
-    color: var(--ink-muted);
-    line-height: 1.6;
-    margin: 0;
-  }
-  @media (max-width: 700px) {
-    .method-grid { grid-template-columns: 1fr; }
-  }
+  .method-body p { font-size: 0.83rem; color: var(--ink-muted); line-height: 1.6; margin: 0; }
 
-  /* --- TIMELINE --- */
-  .timeline {
-    margin: 2rem 0;
-    border-left: 2px solid var(--rule);
-    padding-left: 1.5rem;
+  /* --- BIBLIOGRAPHY --- */
+  .bib-section {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1.8rem;
+    margin-top: 1rem;
   }
-  .tl-item {
-    position: relative;
-    margin-bottom: 1.1rem;
-    padding-bottom: 1.1rem;
+  .bib-list { list-style: none; padding: 0; }
+  .bib-list li {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    text-indent: -2rem;
+    color: var(--ink-muted);
     border-bottom: 1px dashed var(--rule);
+    padding-bottom: 1rem;
   }
-  .tl-last { border-bottom: none; margin-bottom: 0; }
-  .tl-item::before {
-    content: '';
-    position: absolute;
-    left: -1.87rem;
-    top: 6px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent-mid);
-    border: 2px solid var(--surface);
-    outline: 1.5px solid var(--accent-mid);
+  .bib-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .bib-list li span { font-style: italic; }
+
+  /* --- SIDEBAR --- */
+  .sidebar { position: sticky; top: 2rem; }
+  .toc-box {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 1.4rem;
+    margin-bottom: 1.5rem;
   }
-  .tl-last::before { background: var(--accent); outline-color: var(--accent); }
-  .tl-year {
+  .toc-box h3 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+    margin-bottom: 1rem;
+  }
+  .toc-box ol { list-style: none; counter-reset: toc; }
+  .toc-box ol li {
+    counter-increment: toc;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--surface-alt);
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    line-height: 1.4;
+  }
+  .toc-box ol li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--accent-mid);
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  .toc-box ol li:last-child { border-bottom: none; }
+  .toc-box a { color: inherit; text-decoration: none; }
+  .toc-box a:hover { color: var(--accent-mid); }
+
+  .info-box {
+    background: var(--accent-light);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .info-box h3 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent-mid);
+    margin-bottom: 0.8rem;
+  }
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: var(--ink-muted);
+  }
+  .info-row:last-child { border-bottom: none; }
+  .info-row span:last-child { color: var(--accent-mid); font-weight: 500; }
+
+  .tag-box { background: var(--surface-alt); border-radius: 12px; padding: 1.2rem; }
+  .tag-box h3 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+    margin-bottom: 0.8rem;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
     font-size: 0.72rem;
     font-weight: 500;
-    letter-spacing: 0.1em;
-    color: var(--accent-mid);
-    text-transform: uppercase;
-    margin-bottom: 2px;
-  }
-  .tl-text {
-    font-size: 0.86rem;
+    background: #fff;
+    border: 1px solid var(--rule);
     color: var(--ink-muted);
-    line-height: 1.55;
+    padding: 3px 10px;
+    border-radius: 99px;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.78rem;
+    color: var(--ink-subtle);
   }
 
   /* --- RESPONSIVE --- */
   @media (max-width: 700px) {
     .content-wrap { grid-template-columns: 1fr; gap: 2rem; }
     .sidebar { position: static; }
-    .type-grid { grid-template-columns: 1fr; }
+    .method-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 2.1rem; }
   }
 </style>
@@ -484,16 +476,16 @@
 
 <div class="hero">
   <p class="hero-eyebrow">Ensayo</p>
-  <h1>Fundamentos de la Ingeniería del Software</h1>
+  <h1>La Ingeniería del Software: Origen, Evolución y Vigencia</h1>
   <p class="hero-sub">
-    Una mirada introductoria a la disciplina que da forma al mundo digital: qué es, cómo se diversifica y de qué manera se construye un producto de 
-    software de principio a fin.
+    Un análisis argumentativo sobre qué es la ingeniería del software, cómo surgió como disciplina formal, cómo ha evolucionado a través de sus metodologías y por qué sigue siendo indispensable en la actualidad.
+  </p>
+  <p class="hero-question">
+    Pregunta de investigación: ¿Qué es la ingeniería del software y cómo se originó, desarrolló y sigue vigente en la actualidad?
   </p>
   <div class="hero-meta">
     <div class="dropdown">
-      <button class="dropdown-btn">
-        Autores ▾
-      </button>
+      <button class="dropdown-btn">Autores ▾</button>
       <div class="dropdown-content">
         <div class="dropdown-item">Derek Vega</div>
         <div class="dropdown-item">Cristofer Niño</div>
@@ -503,81 +495,72 @@
         <div class="dropdown-item">Armando Ramírez</div>
       </div>
     </div>
-    <span>Publicado en 2026</span>
-    <span>Ensayo sobre la Ingenieria del software</span>
+    <span class="badge"><b>Publicado</b> 2026</span>
   </div>
 </div>
 
 <div class="content-wrap">
   <article>
 
+    <!-- ═══════════════════════════════
+         I. INTRODUCCIÓN
+    ═══════════════════════════════ -->
     <p class="section-label">01 — Introducción</p>
     <h2>¿Qué es la Ingeniería del Software?</h2>
 
     <p>
-      Vivimos en una era donde prácticamente cada aspecto de nuestra vida tiene algún componente digital:
-     desde pagar en el supermercado hasta comunicarnos con alguien al otro lado del mundo. Detrás de todo eso hay código, sistemas y,
-     fundamentalmente, una disciplina que se encarga de construirlos de manera ordenada y efectiva: la <strong>ingeniería del software</strong>.
+      En las últimas décadas, el software se ha convertido en la infraestructura invisible que sostiene la vida moderna: gestiona hospitales, mueve mercados financieros, conecta personas y dirige vehículos autónomos. Sin embargo, la producción de software no siempre fue una actividad ordenada ni fundamentada en principios científicos. Durante los primeros años de la computación, los programas se desarrollaban de manera artesanal, sin procesos formales ni estándares de calidad, lo que derivó en una serie de fracasos costosos y sistemas poco confiables <span class="cita">(Naur y Randell, 1969)</span>.
     </p>
     <p>
-      La ingeniería del software es la aplicación de principios y metodologías de la ingeniería al desarrollo,
-     mantenimiento y mejora de sistemas de software. No se trata únicamente de saber programar; implica planificar, diseñar, documentar, 
-     probar y mantener soluciones que sean funcionales, escalables y confiables. En palabras más simples, es la diferencia entre escribir
-     código que funciona hoy y construir un sistema que funcione durante años.
+      Ante esta situación, la comunidad tecnológica comenzó a preguntarse si era posible aplicar el rigor de la ingeniería clásica al desarrollo de software. La respuesta a esa pregunta dio origen a una nueva disciplina: la <strong>ingeniería del software</strong>. Desde entonces, esta área del conocimiento ha experimentado una evolución constante, adaptándose a los cambios tecnológicos, sociales y organizacionales de cada época.
     </p>
 
-    <div class="pull-quote">
-      <p>"La ingeniería del software no es solo escribir código. Es construir soluciones sostenibles que resuelvan problemas reales."</p>
+    <div class="thesis-box">
+      <span class="thesis-label">Tesis</span>
+      <p>La ingeniería del software surgió como respuesta a una crisis de calidad y gestión en el desarrollo temprano de sistemas informáticos; su evolución a través de metodologías estructuradas, orientadas a objetos y ágiles refleja una disciplina en permanente adaptación, cuya vigencia en la actualidad está garantizada por la creciente complejidad de los sistemas digitales y el papel central del software en todos los ámbitos de la sociedad.</p>
     </div>
 
     <p>
-      Para entender por qué esta disciplina existe y por qué importa tanto, vale la pena hacer un recorrido por su historia,
-     que es más rica de lo que muchos imaginan.
+      Para sostener esta tesis, el presente ensayo recorre la historia de la disciplina desde la "crisis del software" de los años sesenta hasta los paradigmas contemporáneos de desarrollo ágil, DevOps e inteligencia artificial aplicada al software, apoyándose en fuentes académicas de referencia en el campo.
     </p>
 
+    <!-- Historia -->
     <p class="section-label" style="margin-top: 1.8rem;">Historia y evolución</p>
 
     <p>
-      Los orígenes del software se remontan a la década de 1940, cuando "programar" era una labor estrictamente física. 
-     Máquinas como la ENIAC requerían que los operadores configuraran manualmente cables e interruptores, y la memoria se medía en escasos kilobytes.
-     Fue en ese contexto que ocurrió uno de los episodios más curiosos de la historia de la computación: en 1947, la ingeniera <strong>Grace Hopper</strong> documentó el primer <em>bug</em> literal de la historia, una polilla real atrapada dentro de un relé que causaba fallos en el sistema. Desde entonces, "depurar" el código lleva ese nombre. Pioneros como Hopper, Ada Lovelace —considerada la primera programadora de la historia— y Alan Turing, cuyas ideas teóricas sentaron las bases de la computación moderna, fueron quienes abrieron el camino. En aquella época, el software era visto como algo secundario frente al imponente hardware que ocupaba habitaciones enteras.
+      Los orígenes del software se remontan a la década de 1940, cuando "programar" era una labor estrictamente física. Máquinas como la ENIAC requerían que los operadores configuraran manualmente cables e interruptores. Pioneros como <strong>Ada Lovelace</strong>, <strong>Alan Turing</strong> y <strong>Grace Hopper</strong> —quien documentó en 1947 el primer <em>bug</em> literal de la historia, una polilla atrapada en un relé— sentaron las bases conceptuales del campo. En aquella época, el software era visto como algo secundario frente al hardware que ocupaba habitaciones enteras.
     </p>
     <p>
-      Con la llegada de los años 50 y 60, las computadoras se volvieron más accesibles para universidades y empresas,
-     y el software comenzó a cobrar protagonismo. Aparecieron los primeros lenguajes de alto nivel como FORTRAN (1957) y COBOL (1959), 
-     que permitieron escribir programas de forma más comprensible para los humanos. Sin embargo, el crecimiento acelerado de los proyectos
-     trajo consigo un problema serio: los sistemas fallaban, los costos se disparaban y los plazos no se cumplían. Fue así como en 1968, durante una
-     conferencia de la OTAN en Alemania, se acuñó oficialmente el término <em>ingeniería del software</em> como respuesta a lo que se conoció como la <strong>"crisis del software"</strong>.
+      Con la llegada de los años 50 y 60, aparecieron los primeros lenguajes de alto nivel como FORTRAN (1957) y COBOL (1959). Sin embargo, el crecimiento acelerado de los proyectos trajo consigo un problema serio: los sistemas fallaban, los costos se disparaban y los plazos no se cumplían. Fue así como en 1968, durante una conferencia de la OTAN en Alemania, se acuñó oficialmente el término <em>ingeniería del software</em> como respuesta a lo que se conoció como la <strong>"crisis del software"</strong> <span class="cita">(Naur y Randell, 1969)</span>.
     </p>
     <p>
-      La comunidad tecnológica entendió entonces que necesitaba tratar el software con el mismo rigor con que un ingeniero
-     civil trata la construcción de un puente. Se comenzaron a desarrollar modelos formales de desarrollo como el <strong>modelo en cascada</strong> (Waterfall), propuesto por Winston Royce en 1970, que organizaba el proceso en fases secuenciales y documentadas.
+      La comunidad tecnológica entendió entonces que necesitaba tratar el software con el mismo rigor con que un ingeniero civil trata la construcción de un puente. Según Pressman, este fue el momento en que se reconoció que "el software era visto como una ocurrencia tardía" y que su desarrollo requería de disciplinas formales comparables a las de la ingeniería tradicional <span class="cita">(Pressman, 2010, p. 18)</span>.
     </p>
 
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-year">1940s</div>
-        <div class="tl-text">Primeros programas en código máquina. Turing y los fundamentos de la computación.</div>
+        <div class="tl-text">Primeros programas en código máquina. Turing, Lovelace y Hopper sientan las bases de la computación.</div>
       </div>
       <div class="tl-item">
         <div class="tl-year">1957–59</div>
-        <div class="tl-text">Lenguajes de alto nivel: FORTRAN y COBOL hacen el código más legible.</div>
+        <div class="tl-text">Lenguajes de alto nivel: FORTRAN y COBOL hacen el código más legible y portable.</div>
       </div>
       <div class="tl-item">
         <div class="tl-year">1968</div>
-        <div class="tl-text">Conferencia OTAN: nace oficialmente el término "ingeniería del software".</div>
+        <div class="tl-text">Conferencia OTAN: nace oficialmente el término "ingeniería del software" como respuesta a la crisis <span class="cita">(Naur y Randell, 1969)</span>.</div>
       </div>
       <div class="tl-item">
         <div class="tl-year">1970s–80s</div>
-        <div class="tl-text">Modelo en cascada, primeros estándares, auge de lenguajes como C y Pascal.</div>
+        <div class="tl-text">Modelo en cascada, primeros estándares formales, auge de lenguajes como C y Pascal <span class="cita">(Pressman, 2010)</span>.</div>
       </div>
       <div class="tl-item">
         <div class="tl-year">1990s</div>
-        <div class="tl-text">Boom de internet, auge de la POO, Java y el software de escritorio masivo.</div>
+        <div class="tl-text">Boom de internet, consolidación de la POO, Java y el software de escritorio masivo <span class="cita">(Sommerville, 2011)</span>.</div>
       </div>
       <div class="tl-item">
         <div class="tl-year">2001</div>
-        <div class="tl-text">Manifiesto Ágil: una revolución en cómo se entiende y gestiona el desarrollo.</div>
+        <div class="tl-text">Manifiesto Ágil: revolución en cómo se entiende y gestiona el desarrollo <span class="cita">(Beck et al., 2001)</span>.</div>
       </div>
       <div class="tl-item">
         <div class="tl-year">2010s</div>
@@ -585,139 +568,61 @@
       </div>
       <div class="tl-item tl-last">
         <div class="tl-year">Actualidad</div>
-        <div class="tl-text">IA generativa, software inteligente, desarrollo continuo y ecosistemas globales.</div>
+        <div class="tl-text">IA generativa, desarrollo asistido por inteligencia artificial y ecosistemas globales de software.</div>
       </div>
     </div>
 
-    <p>
-      La década de los 90 trajo consigo la explosión de internet y con ella un cambio radical en la forma de pensar el software. Los sistemas dejaron de ser herramientas locales para convertirse en plataformas globales. Java se popularizó con su promesa de "escribe una vez, ejecuta en cualquier lugar", y la programación orientada a objetos se consolidó como el paradigma dominante. También surgió el software de código abierto, un movimiento que democratizó el acceso al conocimiento y aceleró la innovación colectiva.
-    </p>
-    <p>
-      Uno de los hitos más importantes llegó en el año 2001 con la publicación del <strong>Manifiesto Ágil</strong>, un documento firmado por 17 ingenieros que propuso una nueva filosofía de desarrollo basada en la colaboración, la adaptabilidad y la entrega continua de valor. Este manifiesto cambió profundamente la industria y dio origen a metodologías como Scrum y Kanban, que hoy son estándar en miles de equipos de desarrollo alrededor del mundo.
-    </p>
-
+    <!-- El software actualmente -->
     <p class="section-label" style="margin-top: 1.8rem;">El software actualmente</p>
 
     <p>
-      En la actualidad, la ingeniería del software atraviesa una de sus etapas más transformadoras. El auge del <strong>cloud computing</strong> permitió que las aplicaciones se ejecuten en servidores distribuidos globalmente, eliminando la necesidad de infraestructura física propia. Arquitecturas como los microservicios y los contenedores (Docker, Kubernetes) han redefinido cómo se diseñan y despliegan los sistemas modernos.
+      En la actualidad, la ingeniería del software atraviesa una de sus etapas más transformadoras. El auge del <strong>cloud computing</strong> permitió que las aplicaciones se ejecuten en servidores distribuidos globalmente. Arquitecturas como los microservicios y los contenedores (Docker, Kubernetes) han redefinido cómo se diseñan y despliegan los sistemas modernos <span class="cita">(Sommerville, 2011)</span>.
     </p>
     <p>
-      Pero quizás el cambio más significativo de los últimos años es la irrupción de la <strong>inteligencia artificial</strong> en el desarrollo de software. Hoy existen herramientas que asisten al programador en tiempo real, sugieren código, detectan errores y hasta generan componentes completos a partir de instrucciones en lenguaje natural. Esto no reemplaza al ingeniero, sino que transforma su rol: de escribir cada línea a supervisar, diseñar sistemas y tomar decisiones estratégicas.
-    </p>
-    <p>
-      Hoy, la ingeniería del software abarca áreas tan diversas como la arquitectura de sistemas, la ciberseguridad, la gestión de proyectos tecnológicos, la experiencia de usuario y la ética en el diseño de algoritmos. Es una disciplina que no para de crecer, y eso es precisamente lo que la hace tan apasionante para quienes deciden dedicarse a ella.
+      Pero quizás el cambio más significativo es la irrupción de la <strong>inteligencia artificial</strong> en el desarrollo de software. Hoy existen herramientas que asisten al programador en tiempo real, sugieren código y detectan errores. Esto no reemplaza al ingeniero, sino que transforma su rol: de escribir cada línea a supervisar, diseñar sistemas y tomar decisiones arquitectónicas estratégicas <span class="cita">(Pressman, 2010)</span>.
     </p>
 
     <hr class="section-divider">
 
-    <p class="section-label">02 — Tipos de software</p>
-    <h2>La diversidad del software</h2>
+    <!-- ═══════════════════════════════
+         II. DESARROLLO
+    ═══════════════════════════════ -->
+    <p class="section-label">02 — Desarrollo</p>
+    <h2>Evolución de la Disciplina</h2>
+
+    <h3>2.1 La definición formal y la crisis que la originó</h3>
 
     <p>
-      Uno de los aspectos más fascinantes de la ingeniería del software es la enorme variedad de enfoques y paradigmas que existen para crear soluciones. No todos los problemas se resuelven de la misma manera, y eso ha dado lugar a distintas "familias" o tipos de software, cada una con sus propias reglas, ventajas y contextos ideales de uso.
-    </p>
-    <p>
-      A continuación, exploramos los principales paradigmas y tipos de desarrollo de software que todo profesional o entusiasta del área debería conocer:
+      Para comprender la ingeniería del software es necesario partir de su definición canónica. El Instituto de Ingenieros Eléctricos y Electrónicos la define como "la aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación y mantenimiento del software" <span class="cita">(IEEE, 1990, p. 67)</span>. Esta definición es significativa porque enfatiza tres atributos que, en los orígenes del campo, estaban completamente ausentes: sistematicidad, disciplina y medición.
     </p>
 
-    <div class="type-grid">
-      <div class="type-card">
-        <span class="tc-icon">🔗</span>
-        <div class="tc-title">Software estructurado</div>
-        <p class="tc-desc">Basado en el flujo secuencial y el uso de estructuras de control como bucles y condicionales. Es el paradigma clásico, ideal para lógica lineal y tareas bien definidas.</p>
-      </div>
-      <div class="type-card">
-        <span class="tc-icon">🧩</span>
-        <div class="tc-title">Programación orientada a objetos (POO)</div>
-        <p class="tc-desc">Organiza el código en "objetos" que agrupan datos y comportamiento. Lenguajes como Java, Python y C++ usan este enfoque. Es excelente para modelar sistemas complejos del mundo real.</p>
-      </div>
-      <div class="type-card">
-        <span class="tc-icon">🌐</span>
-        <div class="tc-title">Software web</div>
-        <p class="tc-desc">Aplicaciones que se ejecutan en el navegador o en servidores conectados a internet. Incluye desde sitios estáticos hasta plataformas como redes sociales o tiendas en línea.</p>
-      </div>
-      <div class="type-card">
-        <span class="tc-icon">📱</span>
-        <div class="tc-title">Software móvil</div>
-        <p class="tc-desc">Diseñado para dispositivos como smartphones y tablets. Puede ser nativo (Swift, Kotlin) o multiplataforma (React Native, Flutter), y se caracteriza por su énfasis en la usabilidad.</p>
-      </div>
-      <div class="type-card">
-        <span class="tc-icon">⚙️</span>
-        <div class="tc-title">Software embebido</div>
-        <p class="tc-desc">Corre directamente en hardware especializado: electrodomésticos inteligentes, sistemas de automóviles, dispositivos médicos. Requiere alta eficiencia y bajo consumo de recursos.</p>
-      </div>
-      <div class="type-card">
-        <span class="tc-icon">☁️</span>
-        <div class="tc-title">Software en la nube</div>
-        <p class="tc-desc">Sistemas distribuidos que operan sobre infraestructura remota. Plataformas como AWS, Azure o Google Cloud permiten escalar aplicaciones según la demanda sin necesidad de servidores físicos propios.</p>
-      </div>
+    <div class="pull-quote">
+      <p>"El problema con la ingeniería del software es que no existe una bala de plata, ningún avance único que por sí solo prometa siquiera una mejora de un orden de magnitud en productividad, confiabilidad o simplicidad."</p>
+      <cite>— Brooks, F. P. (1987). <em>No Silver Bullet</em>. IEEE Computer, 20(4), p. 10.</cite>
     </div>
 
     <p>
-      Cada uno de estos tipos no es excluyente. En la práctica, un proyecto moderno combina varios paradigmas: por ejemplo, una aplicación bancaria puede ser una app móvil (software móvil), conectada a una API en la nube (software web + cloud) y desarrollada bajo principios de POO. La clave está en elegir el enfoque correcto según el problema que se quiere resolver.
-    </p>
-    <p>
-      También vale la pena mencionar paradigmas más especializados como la <strong>programación funcional</strong>, donde se evita el cambio de estado y se trabaja con funciones puras, o el software de <strong>inteligencia artificial</strong>, que involucra modelos de aprendizaje automático y redes neuronales. Estamos en un momento donde estas fronteras se difuminan constantemente, y conocerlas todas abre un abanico enorme de posibilidades profesionales.
+      La reflexión de Brooks, formulada hace casi cuatro décadas, anticipó uno de los principios más duraderos de la disciplina: la complejidad esencial del software no puede eliminarse, solo gestionarse. Esta idea es la razón de ser de la ingeniería del software como campo de estudio y práctica profesional.
     </p>
 
-    <hr class="section-divider">
-
-    <p class="section-label">03 — Proceso de desarrollo</p>
-    <h2>¿Cómo se construye el software?</h2>
+    <h3>2.2 Del modelo en cascada al desarrollo ágil</h3>
 
     <p>
-      Construir software no es algo que ocurra de la noche a la mañana ni de manera improvisada, al menos no cuando se quiere hacer bien. Existe una serie de fases o etapas que, en conjunto, forman lo que se conoce como el <strong>proceso de desarrollo de software</strong>. Este proceso puede variar dependiendo de la metodología que se adopte (como Scrum, Kanban o el modelo en cascada), pero sus etapas fundamentales se mantienen.
+      Una vez reconocida la necesidad de sistematizar el desarrollo, la disciplina evolucionó a través de sucesivos paradigmas. El <strong>modelo en cascada</strong>, propuesto por Winston Royce en 1970, organizó el proceso en fases secuenciales: análisis, diseño, implementación, pruebas y mantenimiento <span class="cita">(Pressman, 2010)</span>. Ofrecía predictibilidad y documentación exhaustiva, pero su rigidez lo hacía inadecuado cuando los requisitos cambiaban —algo que en la práctica resultó ser la norma.
+    </p>
+    <p>
+      Durante los años 80 y 90, la <strong>programación orientada a objetos (POO)</strong> transformó la manera de modelar los sistemas. Lenguajes como C++, Smalltalk y Java permitieron encapsular datos y comportamiento en unidades reutilizables llamadas objetos, facilitando la construcción de sistemas más complejos y mantenibles <span class="cita">(Sommerville, 2011)</span>.
+    </p>
+    <p>
+      Fue la presión por velocidad y adaptabilidad la que, en 2001, impulsó a diecisiete ingenieros a publicar el <strong>Manifiesto Ágil</strong>, que propuso anteponer la colaboración con el cliente, la entrega continua de software funcional y la respuesta al cambio sobre la documentación exhaustiva <span class="cita">(Beck et al., 2001)</span>. A partir de él surgieron Scrum, Kanban y Extreme Programming, que hoy dominan la industria.
     </p>
 
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <strong>Análisis de requerimientos</strong>
-          <span>Todo comienza preguntando: ¿qué necesita el usuario? ¿Qué problema vamos a resolver? En esta fase se recopilan y documentan los requerimientos funcionales y no funcionales del sistema. Es quizás la etapa más crítica: un error aquí se multiplica en todas las fases posteriores.</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <strong>Diseño del sistema</strong>
-          <span>Con los requerimientos claros, se diseña la arquitectura del software. Utilizando herramientas visuales como <em>UML</em> (creado en los años 90), los ingenieros definen cómo se conectarán las bases de datos, qué capas tendrá el sistema y cómo será la interfaz de usuario. Un buen diseño es como un buen plano arquitectónico: guía toda la construcción.</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <strong>Implementación (codificación)</strong>
-          <span>Aquí es donde los desarrolladores escriben el código. Es la fase más visible del proceso, aunque no necesariamente la más larga. Los programadores trabajan siguiendo los lineamientos del diseño, aplicando buenas prácticas y estándares del lenguaje elegido.</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-content">
-          <strong>Pruebas y control de calidad</strong>
-          <span>Una vez desarrollado, el software debe ser probado exhaustivamente. Las pruebas unitarias, de integración, de rendimiento y de usuario aseguran que el sistema funcione como se espera y que no tenga errores críticos antes de su despliegue.</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">05</div>
-        <div class="step-content">
-          <strong>Despliegue</strong>
-          <span>El producto se libera al entorno de producción, es decir, llega a los usuarios finales. Esto puede hacerse de forma gradual (por fases) o de una sola vez. Hoy en día, con metodologías DevOps, este proceso es continuo y altamente automatizado.</span>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">06</div>
-        <div class="step-content">
-          <strong>Mantenimiento y evolución</strong>
-          <span>El software nunca está realmente "terminado". Esta fase cubre la corrección de errores, la adaptación a nuevas necesidades y la mejora continua. En muchos proyectos, el mantenimiento representa más del 60% del costo total del ciclo de vida.</span>
-        </div>
-      </div>
+    <div class="pull-quote">
+      <p>"Nuestra mayor prioridad es satisfacer al cliente mediante la entrega temprana y continua de software con valor."</p>
+      <cite>— Beck, K., et al. (2001). <em>Manifiesto por el Desarrollo Ágil de Software</em>. https://agilemanifesto.org</cite>
     </div>
 
-    <p class="section-label" style="margin-top: 1.8rem;">¿Cómo organizamos estas fases? Las metodologías</p>
-    <p>
-      A lo largo de la historia, la forma de transitar por estas etapas ha cambiado radicalmente. Hoy conviven tres grandes enfoques metodológicos que es importante distinguir:
-    </p>
+    <p style="margin-top:1.5rem;">Los tres grandes enfoques metodológicos que conviven en la actualidad:</p>
 
     <div class="method-grid">
       <div class="method-card">
@@ -726,7 +631,7 @@
           <span class="method-name">Modelo en cascada</span>
         </div>
         <div class="method-body">
-          <p>Un enfoque tradicional y secuencial donde cada fase debe terminar completamente antes de que comience la siguiente: análisis → diseño → código → pruebas → entrega. Funciona bien en proyectos con requisitos inamovibles, pero es lento para reaccionar a cambios. Si algo falla en producción, el retroceso es costoso.</p>
+          <p>Proceso secuencial donde cada fase debe completarse antes de iniciar la siguiente. Funciona bien con requisitos fijos, pero costoso ante cambios. Base de los primeros proyectos formales de software <span class="cita">(Pressman, 2010)</span>.</p>
         </div>
       </div>
       <div class="method-card">
@@ -735,7 +640,7 @@
           <span class="method-name">Metodologías ágiles</span>
         </div>
         <div class="method-body">
-          <p>Con el Manifiesto Ágil surgieron marcos como <em>Scrum</em> y <em>Extreme Programming (XP)</em>. Dividen el desarrollo en ciclos cortos llamados <em>sprints</em>, priorizando la colaboración constante con el cliente y la entrega rápida de software funcional. Permiten adaptarse a cambios que, en el mundo del software, son completamente inevitables.</p>
+          <p>Ciclos cortos (<em>sprints</em>) con entregas frecuentes. Prioriza la colaboración y la adaptabilidad. Marcos como Scrum y XP son estándar en miles de equipos globales <span class="cita">(Beck et al., 2001)</span>.</p>
         </div>
       </div>
       <div class="method-card">
@@ -744,57 +649,112 @@
           <span class="method-name">DevOps</span>
         </div>
         <div class="method-body">
-          <p>La evolución natural del modelo ágil. Integra a los desarrolladores <em>(Dev)</em> con los equipos de operaciones <em>(Ops)</em>, automatizando la entrega continua y el despliegue de software. Permite actualizaciones rápidas, seguras y frecuentes, haciendo del software algo que se mejora de manera constante y casi invisible para el usuario.</p>
+          <p>Integra desarrollo y operaciones en un flujo continuo. Automatiza la entrega y el despliegue, reduciendo ciclos de meses a horas. Garantiza software confiable y en mejora constante.</p>
         </div>
       </div>
     </div>
 
+    <h3>2.3 Vigencia en la actualidad</h3>
+
     <p>
-      En definitiva, entender el proceso de desarrollo es esencial para cualquier persona que quiera trabajar en tecnología, ya sea como desarrollador, diseñador, product manager o incluso como cliente que encarga un sistema. Cuando se comprende cómo se construye el software, se toman mejores decisiones en cada etapa del camino.
+      Lejos de ser una disciplina superada, la ingeniería del software se encuentra hoy en uno de sus momentos de mayor relevancia. La proliferación del cloud computing, los sistemas distribuidos y los microservicios ha multiplicado la complejidad de los sistemas modernos, haciendo más necesario que nunca contar con principios sólidos de diseño, arquitectura y gestión de calidad <span class="cita">(Sommerville, 2011)</span>.
+    </p>
+    <p>
+      La irrupción de la inteligencia artificial como herramienta dentro del propio proceso de desarrollo está cambiando el rol del ingeniero: de escribir manualmente cada línea a supervisar, diseñar sistemas y tomar decisiones arquitectónicas estratégicas. Esto no elimina la disciplina, sino que la eleva: se requiere un ingeniero capaz de pensar en sistemas completos, evaluar la calidad del código generado y garantizar la seguridad y ética de los productos <span class="cita">(Pressman, 2010)</span>.
+    </p>
+    <p>
+      La reflexión de Brooks, formulada hace casi cuatro décadas, sigue siendo sorprendentemente vigente: no existe una solución mágica que resuelva de golpe la complejidad esencial del software <span class="cita">(Brooks, 1987)</span>. La ingeniería del software continúa siendo la respuesta más robusta con que cuenta la humanidad para enfrentar esa complejidad de manera ordenada y confiable.
     </p>
 
     <hr class="section-divider">
 
-    <p class="section-label">04 — Cierre</p>
-    <h2>Reflexión final</h2>
+    <!-- ═══════════════════════════════
+         III. CONCLUSIÓN
+    ═══════════════════════════════ -->
+    <p class="section-label">03 — Conclusión</p>
+    <h2>Reflexión Final</h2>
 
     <p>
-      La ingeniería del software es mucho más que escribir código: es una disciplina que combina pensamiento lógico, creatividad, trabajo en equipo y una comprensión profunda de las necesidades humanas. Desde sus fundamentos teóricos hasta la diversidad de paradigmas y la complejidad de sus procesos, esta área del conocimiento ofrece un campo fértil para quienes deseen construir el mundo digital del futuro.
+      A lo largo de este ensayo se ha argumentado que la ingeniería del software nació como respuesta directa a una crisis de calidad y gestión que amenazaba con hacer inviable el desarrollo de sistemas informáticos complejos. Desde su formalización en la conferencia de la OTAN de 1968, la disciplina transitó por el modelo en cascada, la programación orientada a objetos, el desarrollo ágil y DevOps, sin perder su propósito fundamental: aplicar un enfoque sistemático al proceso de creación de software.
     </p>
     <p>
-      Conocer sus bases, los tipos de software que existen y cómo se lleva a cabo el proceso de desarrollo es el primer paso para convertirse en un profesional íntegro dentro de la industria tecnológica. El camino apenas comienza, y lo que viene después es apasionante.
+      La tesis propuesta al inicio queda confirmada: la ingeniería del software es una disciplina en permanente adaptación, cuya vigencia no solo se mantiene sino que se profundiza en un mundo donde el software permea todos los aspectos de la vida humana. El ingeniero contemporáneo debe dominar no solo técnicas de programación, sino también principios de arquitectura, gestión de proyectos, aseguramiento de la calidad y uso crítico de herramientas de inteligencia artificial.
     </p>
+    <p>
+      Comprender la historia y los fundamentos de esta disciplina no es un ejercicio de erudición académica: es la base que permite tomar mejores decisiones en cada etapa del desarrollo de software y contribuir, con rigor y responsabilidad, al mundo digital que todos habitamos.
+    </p>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════════════════════
+         IV. BIBLIOGRAFÍA
+    ═══════════════════════════════ -->
+    <p class="section-label">04 — Bibliografía</p>
+    <h2>Referencias</h2>
+
+
+    <div class="bib-section">
+      <ul class="bib-list">
+        <li>
+          Beck, K., Beedle, M., van Bennekum, A., Cockburn, A., Cunningham, W., Fowler, M., Grenning, J., Highsmith, J., Hunt, A., Jeffries, R., Kern, J., Marick, B., Martin, R. C., Mellor, S., Schwaber, K., Sutherland, J., y Thomas, D. (2001). <span>Manifiesto por el desarrollo ágil de software.</span> https://agilemanifesto.org
+        </li>
+        <li>
+          Brooks, F. P. (1987). No silver bullet: Essence and accidents of software engineering. <span>IEEE Computer, 20</span>(4), 10–19. https://doi.org/10.1109/MC.1987.1663532
+        </li>
+        <li>
+          IEEE. (1990). <span>IEEE standard glossary of software engineering terminology</span> (IEEE Std 610.12-1990). Institute of Electrical and Electronics Engineers. https://doi.org/10.1109/IEEESTD.1990.101064
+        </li>
+        <li>
+          Naur, P., y Randell, B. (Eds.). (1969). <span>Software engineering: Report on a conference sponsored by the NATO Science Committee.</span> NATO Scientific Affairs Division.
+        </li>
+        <li>
+          Pressman, R. S. (2010). <span>Ingeniería del software: Un enfoque práctico</span> (7.ª ed.). McGraw-Hill.
+        </li>
+        <li>
+          Sommerville, I. (2011). <span>Ingeniería del software</span> (9.ª ed.). Pearson Educación.
+        </li>
+      </ul>
+    </div>
 
   </article>
 
+  <!-- ═══════════════════════════════
+       SIDEBAR
+  ═══════════════════════════════ -->
   <aside class="sidebar">
     <div class="toc-box">
       <h3>Contenido</h3>
       <ol>
-        <li>Introducción a la Ingeniería del Software</li>
-        <li>Diversidad y tipos de software</li>
-        <li>Proceso de desarrollo</li>
-        <li>Reflexión final</li>
+        <li><a href="#">Introducción y contexto histórico</a></li>
+        <li><a href="#">Definición formal y crisis del software</a></li>
+        <li><a href="#">Evolución: cascada → ágil → DevOps</a></li>
+        <li><a href="#">Vigencia en la actualidad</a></li>
+        <li><a href="#">Conclusión</a></li>
+        <li><a href="#">Bibliografía APA</a></li>
       </ol>
     </div>
+
+
     <div class="tag-box">
       <h3>Temas</h3>
       <div class="tags">
         <span class="tag">Ing. Software</span>
-        <span class="tag">POO</span>
-        <span class="tag">Web</span>
+        <span class="tag">Historia</span>
+        <span class="tag">Crisis del SW</span>
         <span class="tag">Ágil</span>
         <span class="tag">DevOps</span>
-        <span class="tag">Móvil</span>
+        <span class="tag">POO</span>
         <span class="tag">Cloud</span>
-        <span class="tag">QA</span>
+        <span class="tag">IA</span>
+        <span class="tag">APA</span>
       </div>
     </div>
   </aside>
+
 </div>
 
 <footer>
- copyright © 2026 Los Telaraños de Tercer Año. Ing. Sistemas
+  copyright &copy; 2026 Los Telaraños de Tercer Año &nbsp;·&nbsp; Ingeniería de Sistemas
 </footer>
 
 </body>
